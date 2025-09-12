@@ -1,0 +1,133 @@
+{
+  "format": "page",
+  "id": "fragrance",
+  "label": "Fragrance ",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "bottle_image": {
+        "type": "Image",
+        "config": {
+          "label": "Bottle Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,em,strong"
+        }
+      },
+      "price": {
+        "type": "Number",
+        "config": {
+          "label": "Price",
+          "placeholder": "(in cents)"
+        }
+      },
+      "scent_profile": {
+        "type": "Select",
+        "config": {
+          "label": "Scent Profile",
+          "placeholder": "",
+          "options": ["Rare", "Bold", "Vibrant", "Fresh", "Woody"],
+          "default_value": "Rare"
+        }
+      },
+      "mood": {
+        "type": "Select",
+        "config": {
+          "label": "Mood",
+          "placeholder": "",
+          "options": [
+            "Mystical",
+            "Wise",
+            "Dynamic",
+            "Life-giving",
+            "Trailblazing"
+          ],
+          "default_value": "Mystical"
+        }
+      },
+      "energy_type": {
+        "type": "Select",
+        "config": {
+          "label": "Energy Type",
+          "placeholder": "",
+          "options": [
+            "Manifestor",
+            "Generator",
+            "Mani-gen",
+            "Projector",
+            "Reflector"
+          ],
+          "default_value": "Manifestor"
+        }
+      },
+      "gallery_image_one": {
+        "type": "Image",
+        "config": {
+          "label": "Gallery Image One",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "gallery_image_two": {
+        "type": "Image",
+        "config": {
+          "label": "Gallery Image Two",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

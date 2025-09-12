@@ -1,0 +1,82 @@
+{
+  "id": "featured_fragrance",
+  "type": "SharedSlice",
+  "name": "FeaturedFragrance",
+  "description": "FeaturedFragrance",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "feature_image": {
+          "type": "Image",
+          "config": {
+            "label": "Feature Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "smallimage": {
+          "type": "Image",
+          "config": {
+            "label": "SmallImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "fragrance": {
+          "type": "Link",
+          "config": {
+            "label": "Fragrance",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              {
+                "id": "fragrance",
+                "fields": [
+                  "title",
+                  "bottle_image",
+                  "description"
+                ]
+              }
+            ]
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

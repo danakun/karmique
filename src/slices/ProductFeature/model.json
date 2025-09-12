@@ -1,0 +1,70 @@
+{
+  "id": "product_feature",
+  "type": "SharedSlice",
+  "name": "ProductFeature",
+  "description": "ProductFeature",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "leftimage": {
+          "type": "Image",
+          "config": {
+            "label": "LeftImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "rightimage": {
+          "type": "Image",
+          "config": {
+            "label": "RightImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,heading4,heading5,heading6,strong,em"
+          }
+        },
+        "textbody": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextBody",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "featuredlink": {
+          "type": "Link",
+          "config": {
+            "label": "FeaturedLink",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Primary",
+              "Secondary",
+              "Tertiary",
+              "Link"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
