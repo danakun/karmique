@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Container from "@/components/Container";
 import { Lazy } from "@/components/Lazy";
 
 /**
@@ -14,12 +13,10 @@ export type VideoProps = SliceComponentProps<Content.VideoSlice>;
  */
 const Video: FC<VideoProps> = ({ slice }) => {
   return (
-    <Container
-      as="section"
+    <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mb-20"
-      variant="full"
+      className="relative mx-0 mb-20"
     >
       <h2 className="sr-only">Karmique Video</h2>
       <Lazy
@@ -32,7 +29,7 @@ const Video: FC<VideoProps> = ({ slice }) => {
           className="pointer-events-none absolute left-1/2 aspect-video h-full -translate-x-1/2"
         />
       </Lazy>
-    </Container>
+    </section>
   );
 };
 
