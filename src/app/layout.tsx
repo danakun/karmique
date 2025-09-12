@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
 import { Rethink_Sans, Radley } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -60,6 +62,7 @@ export default async function RootLayout({
             <Footer />
           </main>
         </body>
+        <PrismicPreview repositoryName={repositoryName} />
       </html>
     </ViewTransitions>
   );
