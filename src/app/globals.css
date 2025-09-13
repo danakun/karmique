@@ -616,7 +616,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #fff;
   /* backdrop-filter: blur(20px); */
   z-index: 1000;
   transition: all var(--duration-normal) var(--ease-luxury);
@@ -699,7 +699,7 @@ body {
   top: 72px;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #fff;
   /* backdrop-filter: blur(20px); */
   opacity: 0;
   visibility: hidden;
@@ -865,14 +865,13 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #fff;
   /* backdrop-filter: blur(20px); */
   border-bottom: 1px solid var(--color-stroke-grey);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateY(-2px);
   transition: all 0.4s var(--ease-luxury);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   z-index: 1001;
 }
 
