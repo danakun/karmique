@@ -1,6 +1,4 @@
-// app/not-found.js
 import { TransitionLink } from "../components/TransitionLink";
-// import { NavBar } from "@/components/NavBar/NavBar";
 
 export default function NotFound() {
   return (

@@ -42,17 +42,6 @@ export const StartScreen = ({ quizData, onStart }: StartScreenProps) => {
           {quizData.data.start_button_text || "Start the quiz"}
         </button>
       </FadeIn>
-      {/* <FadeInWrapper delay={1} duration={0.8} y={20}>
-        <button onClick={onStart} className="btn btn-tertiary">
-          {quizData.data.start_button_text || "Start the quiz"}
-        </button>
-      </FadeInWrapper> */}
-      {/* <button
-        className="btn btn-tertiary fade-in-up fade-in-up-delay"
-        onClick={onStart}
-      >
-        {quizData.data.start_button_text || "Start the quiz"}
-      </button> */}
     </div>
   );
 };

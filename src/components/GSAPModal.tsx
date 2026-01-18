@@ -1,7 +1,7 @@
 // components/GSAPModal.tsx
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -33,7 +33,7 @@ export const GSAPModal = ({
   const overlayRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     if (!overlayRef.current || !modalRef.current) return;
 
     // Exit animation
@@ -55,7 +55,7 @@ export const GSAPModal = ({
       },
       "-=0.1",
     );
-  };
+  }, [onClose]);
 
   // GSAP entrance animation
   useGSAP(() => {

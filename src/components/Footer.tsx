@@ -2,7 +2,6 @@ import SubscribeForm from "./SubscribeForm";
 import Column from "./Column";
 import Grid from "./Grid";
 import { TransitionLink } from "./TransitionLink";
-import Container from "./Container";
 
 export default function Footer() {
   return (

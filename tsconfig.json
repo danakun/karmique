@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/hooks/useScrollDirection",
-    "src/app/not-found.js"
+    "src/app/not-found.js",
+    "global.d.ts"
   ],
   "exclude": ["node_modules"]
 }
