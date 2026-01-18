@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Rethink_Sans, Radley } from "next/font/google";
-// @ts-expect-error css import
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/NavBar/NavBar";

@@ -1,7 +1,6 @@
 "use client";
 
 import { FadeIn } from "@/components/FadeIn";
-import { FadeInWrapper } from "@/components/FadeInWrapper";
 import { RevealText } from "@/components/RevealText";
 import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
