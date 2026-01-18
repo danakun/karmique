@@ -52,7 +52,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
           <FadeIn vars={{ duration: 0.8, delay: 0.4 }}>
             <ButtonLink
               field={slice.primary.button}
-              className={slice.primary.button.variant}
+              className={`{slice.primary.button.variant}`}
               variant="Tertiary"
               key={slice.id}
             />

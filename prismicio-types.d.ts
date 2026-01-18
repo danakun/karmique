@@ -498,12 +498,182 @@ export type JournalDocument<Lang extends string = string> =
     Lang
   >;
 
-type QuizDocumentDataSlicesSlice = CallToActionSlice;
+/**
+ * Item in *Quiz → Questions*
+ */
+export interface QuizDocumentDataQuestionsItem {
+  /**
+   * Question Text field in *Quiz → Questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].question_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  question_text: prismic.KeyTextField;
+
+  /**
+   * Image Electra field in *Quiz → Questions*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].image_electra
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_electra: prismic.ImageField<never>;
+
+  /**
+   * Answer Electra field in *Quiz → Questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].answer_electra
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  answer_electra: prismic.KeyTextField;
+
+  /**
+   * Image Stargazer field in *Quiz → Questions*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].image_stargazer
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_stargazer: prismic.ImageField<never>;
+
+  /**
+   * Answer Stargazer field in *Quiz → Questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].answer_stargazer
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  answer_stargazer: prismic.KeyTextField;
+
+  /**
+   * Image Oracle field in *Quiz → Questions*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].image_oracle
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_oracle: prismic.ImageField<never>;
+
+  /**
+   * Answer Oracle field in *Quiz → Questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].answer_oracle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  answer_oracle: prismic.KeyTextField;
+
+  /**
+   * Image Reign field in *Quiz → Questions*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].image_reign
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_reign: prismic.ImageField<never>;
+
+  /**
+   * Answer Reign field in *Quiz → Questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].answer_reign
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  answer_reign: prismic.KeyTextField;
+
+  /**
+   * Image Luminara field in *Quiz → Questions*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].image_luminara
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_luminara: prismic.ImageField<never>;
+
+  /**
+   * Answer Luminara field in *Quiz → Questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[].answer_luminara
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  answer_luminara: prismic.KeyTextField;
+}
+
+type QuizDocumentDataSlicesSlice = never;
 
 /**
  * Content for Quiz documents
  */
 interface QuizDocumentData {
+  /**
+   * Eyebrow field in *Quiz*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.eyebrow
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Quiz*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *Quiz*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.body
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Start Button Text field in *Quiz*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.start_button_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  start_button_text: prismic.KeyTextField;
+
+  /**
+   * Questions field in *Quiz*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quiz.questions[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  questions: prismic.GroupField<Simplify<QuizDocumentDataQuestionsItem>>;
+
   /**
    * Slice Zone field in *Quiz*
    *
@@ -1276,6 +1446,7 @@ declare module "@prismicio/client" {
       JournalDocumentDataSlicesSlice,
       QuizDocument,
       QuizDocumentData,
+      QuizDocumentDataQuestionsItem,
       QuizDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,

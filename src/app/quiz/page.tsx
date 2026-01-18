@@ -1,16 +1,22 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
-import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+import Container from "../../components/Container";
+import { Quiz } from "./Quiz";
 
 export default async function Page() {
   const client = createClient();
-  const page = await client.getSingle("quiz").catch(() => notFound());
+  const quiz = await client.getSingle("quiz").catch(() => notFound());
+  const fragrances = await client.getAllByType("fragrance");
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <Container variant="full">
+      <Quiz quizData={quiz} fragrances={fragrances}></Quiz>
+    </Container>
+  );
+  // <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateMetadata(): Promise<Metadata> {

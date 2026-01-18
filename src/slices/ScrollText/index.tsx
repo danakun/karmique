@@ -111,7 +111,7 @@ const ScrollText: FC<ScrollTextProps> = ({ slice }) => {
         </div>
 
         <div className="text-center" ref={textRef}>
-          <p className="decorative h2 flex flex-wrap justify-center leading-tight text-balance">
+          <p className="decorative h2 flex flex-wrap justify-center px-12 leading-tight text-balance">
             {words.map((word, index) => (
               <span key={`${word}-${index}`} className="inline">
                 {word.split("").map((letter, letterIndex) => (

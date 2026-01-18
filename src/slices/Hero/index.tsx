@@ -63,7 +63,7 @@ const Hero: FC<HeroProps> = async ({ slice }) => {
               <RevealMainHeader
                 field={slice.primary.heading}
                 id="hero-heading"
-                className="h1 font-decorative my-6 leading-0.5 text-white 2xl:mt-12"
+                className="h1 font-decorative my-6 leading-[0.9] text-white 2xl:mt-12"
                 staggerAmount={0.2}
                 duration={1.7}
               />

@@ -2,10 +2,11 @@ import SubscribeForm from "./SubscribeForm";
 import Column from "./Column";
 import Grid from "./Grid";
 import { TransitionLink } from "./TransitionLink";
+import Container from "./Container";
 
 export default function Footer() {
   return (
-    <footer className="bg-white pt-44 pb-6 xl:pt-40">
+    <footer className="bg-white pt-18 pb-6 lg:pt-44 xl:pt-40">
       <Grid className="px-5">
         <Column span={3} className="pt-5">
           {/* About Section */}
@@ -27,6 +28,9 @@ export default function Footer() {
               <TransitionLink href="/brand" className="nav-link text-base">
                 Karmique brand
               </TransitionLink>
+              <TransitionLink href="/quiz" className="nav-link text-base">
+                Quiz
+              </TransitionLink>
             </nav>
           </div>
         </Column>
@@ -39,7 +43,7 @@ export default function Footer() {
               aria-label="Shop by type"
             >
               <TransitionLink
-                href="/fragrance/empire"
+                href="/fragrance/reign"
                 className="nav-link text-base"
               >
                 Generator
@@ -113,16 +117,16 @@ export default function Footer() {
       </Grid>
 
       {/* Large Brand Name */}
-      <div className="brand-container mt-16 px-5 text-start">
+      <div className="brand-container mt-16 px-5">
         <span className="brand-hero-text leading-none font-bold text-black">
           KARMIQUE
         </span>
       </div>
 
       {/* Bottom Footer */}
-      <div className="flex flex-col items-center justify-between border-t border-gray-100 pt-8 md:flex-row">
+      <div className="flex flex-col items-center justify-between border-t border-gray-100 px-5 pt-8 md:flex-row">
         <p className="text-small text-black">All rights reserved by Dana Kun</p>
-        <p className="text-small text-black">2025 Karmique ™</p>
+        <p className="text-small text-black">2025 Karmique Barcelona™</p>
       </div>
     </footer>
   );

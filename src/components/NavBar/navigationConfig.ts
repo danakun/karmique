@@ -35,7 +35,7 @@ export const createNavigationConfig = (settings?: Content.SettingsDocument) => {
             { href: "/fragrance/stargazer", label: "Generator" },
             { href: "/fragrance/radiance", label: "Manifestor" },
             { href: "/fragrance/electra", label: "Mani-gen" },
-            { href: "/fragrance/empire", label: "Projector" },
+            { href: "/fragrance/reign", label: "Projector" },
             { href: "/fragrance/oracle", label: "Reflector" },
           ],
         },

@@ -6,15 +6,134 @@
   "status": true,
   "json": {
     "Main": {
+      "eyebrow": {
+        "type": "Text",
+        "config": {
+          "label": "Eyebrow",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "body": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Body",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em"
+        }
+      },
+      "start_button_text": {
+        "type": "Text",
+        "config": {
+          "label": "Start Button Text",
+          "placeholder": ""
+        }
+      },
+      "questions": {
+        "type": "Group",
+        "config": {
+          "label": "Questions",
+          "repeat": true,
+          "fields": {
+            "question_text": {
+              "type": "Text",
+              "config": {
+                "label": "Question Text",
+                "placeholder": ""
+              }
+            },
+            "image_electra": {
+              "type": "Image",
+              "config": {
+                "label": "Image Electra",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_electra": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Electra",
+                "placeholder": ""
+              }
+            },
+            "image_stargazer": {
+              "type": "Image",
+              "config": {
+                "label": "Image Stargazer",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_stargazer": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Stargazer",
+                "placeholder": ""
+              }
+            },
+            "image_oracle": {
+              "type": "Image",
+              "config": {
+                "label": "Image Oracle",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_oracle": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Oracle",
+                "placeholder": ""
+              }
+            },
+            "image_reign": {
+              "type": "Image",
+              "config": {
+                "label": "Image Reign",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_reign": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Reign",
+                "placeholder": ""
+              }
+            },
+            "image_luminara": {
+              "type": "Image",
+              "config": {
+                "label": "Image Luminara",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_luminara": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Luminara",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "call_to_action": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },

@@ -1,0 +1,169 @@
+.triggerButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.triggerButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+.modalContent {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  min-height: 450px;
+}
+
+.imageSection {
+  background: #f5f5f5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.formSection {
+  padding: 64px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #999999;
+  font-size: 24px;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcomeText {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #999999;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.formSubtitle {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #000000;
+}
+
+.signupForm {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.emailInput:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.signupButton {
+  padding: 16px 32px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.signupButton:hover {
+  background: #333333;
+  transform: scale(1.02);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .formSection {
+    padding: 32px;
+  }
+
+  .formTitle,
+  .formSubtitle {
+    font-size: 24px;
+  }
+
+  .signupForm {
+    flex-direction: column;
+  }
+
+  .signupButton {
+    width: 100%;
+  }
+}
