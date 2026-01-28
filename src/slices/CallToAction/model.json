@@ -56,6 +56,66 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "withVideoBackground",
+      "name": "withVideoBackground",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3,strong,em"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Primary",
+              "Secondary",
+              "Tertiary",
+              "Link"
+            ]
+          }
+        },
+        "youtube_video_id": {
+          "type": "Text",
+          "config": {
+            "label": "YouTube Video ID",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

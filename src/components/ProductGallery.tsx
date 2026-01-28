@@ -37,18 +37,18 @@ export const ProductGallery = ({
           className="animate-in bg-grey/10 translate-y-16 opacity-0 will-change-transform"
           vars={{ duration: 1, delay: 0.6 }}
         >
-          <div className="relative aspect-[3/4] w-full">
+          <div className="relative w-full md:aspect-[3/4]">
             {/* Reflection effect */}
             <PrismicNextImage
               field={currentImage}
               priority
-              className="absolute top-[90%] aspect-[3/4] -scale-y-100 rounded-lg [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_70%,rgba(0,0,0,.30)_100%)] object-cover"
+              className="absolute top-[90%] -scale-y-100 rounded-lg [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_70%,rgba(0,0,0,.30)_100%)] object-cover md:aspect-[3/4]"
             />
             {/* Main image */}
             <PrismicNextImage
               field={currentImage}
               priority
-              className="relative aspect-[3/4] h-auto w-full rounded-lg object-cover"
+              className="relative h-auto w-full rounded-lg object-cover md:aspect-[3/4]"
             />
           </div>
         </FadeIn>

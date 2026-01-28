@@ -35,7 +35,7 @@ const Hero: FC<HeroProps> = async ({ slice }) => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative min-h-screen items-start bg-black"
+      className="relative min-h-dvh items-start bg-black md:min-h-screen"
     >
       {/* Full-width background image */}
       <FadeIn
@@ -54,8 +54,8 @@ const Hero: FC<HeroProps> = async ({ slice }) => {
       {/* Dark overlay */}
       {/* <div className="absolute inset-0 z-[1] bg-black/20" /> */}
 
-      {/* Content with proper margins */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[1400px]">
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] px-6">
         <Grid>
           <Column span={12}>
             {/* Main heading */}
@@ -63,17 +63,17 @@ const Hero: FC<HeroProps> = async ({ slice }) => {
               <RevealMainHeader
                 field={slice.primary.heading}
                 id="hero-heading"
-                className="h1 font-decorative my-6 leading-[0.9] text-white 2xl:mt-12"
+                className="h1 font-decorative mt-6 leading-[0.9] text-white 2xl:mt-12"
                 staggerAmount={0.2}
                 duration={1.7}
               />
             </div>
           </Column>
-          <Column span={4}>
+          <Column span={12}>
             {/* Description */}
             <FadeIn
               vars={{ delay: 1, duration: 1 }}
-              className="text-large mb-8 text-white motion-safe:translate-y-8"
+              className="text-large mb-2 max-w-96 text-white motion-safe:translate-y-8 md:mb-8"
             >
               <PrismicRichText field={slice.primary.paragraph} />
             </FadeIn>
@@ -85,16 +85,6 @@ const Hero: FC<HeroProps> = async ({ slice }) => {
             >
               {slice.primary.button.map((link) => (
                 <ButtonLink key={link.key} field={link} variant="Secondary" />
-                // <PrismicNextLink
-                //   key={link.key}
-                //   field={link}
-                //   className={clsx(
-                //     "btn",
-                //     link.variant === "Secondary"
-                //       ? "btn-secondary"
-                //       : "btn-primary",
-                //   )}
-                // />
               ))}
             </FadeIn>
           </Column>

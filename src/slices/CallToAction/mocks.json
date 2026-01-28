@@ -31,8 +31,8 @@
 				]
 			},
 			"button": {
-				"__TYPE__": "LinkContent",
 				"key": "a1dbd73b-f246-4440-babd-9b43e40ca468",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://google.com",
@@ -42,5 +42,59 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withVideoBackground",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "walk",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Watch"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Est irure consectetur labore eu et laboris sint veniam fugiat laborum non commodo aute ullamco culpa. Officia incididunt veniam ex amet exercitation dolore occaecat."
+						}
+					}
+				]
+			},
+			"button": {
+				"key": "142b7aae-bc9f-490b-a8c3-f84b937d32d9",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "many",
+					"variant": "Secondary"
+				}
+			},
+			"youtube_video_id": {
+				"__TYPE__": "FieldContent",
+				"value": "surrounded",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

@@ -5,9 +5,9 @@ import { TransitionLink } from "./TransitionLink";
 
 export default function Footer() {
   return (
-    <footer className="bg-white pt-18 pb-6 lg:pt-44 xl:pt-40">
+    <footer className="bg-white pt-16 pb-6 lg:pt-44 xl:pt-40">
       <Grid className="px-5">
-        <Column span={3} className="pt-5">
+        <Column span={3} spanMd={2} spanSm={2} className="pt-5 pb-7">
           {/* About Section */}
           <div className="flex flex-col space-y-6">
             <h3 className="h4">About</h3>
@@ -33,7 +33,7 @@ export default function Footer() {
             </nav>
           </div>
         </Column>
-        <Column span={3} className="pt-5">
+        <Column span={3} spanMd={2} spanSm={2} className="pt-5 pb-7">
           {/* Shop Section */}
           <div className="flex flex-col space-y-6">
             <h3 className="h4">Shop</h3>
@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
         </Column>
 
-        <Column span={3} className="pt-5">
+        <Column span={3} spanMd={2} spanSm={2} className="pt-5 pb-7">
           {/* Social Section */}
           <div className="flex flex-col space-y-6">
             <h3 className="h4">Social</h3>
@@ -110,7 +110,7 @@ export default function Footer() {
             </nav>
           </div>
         </Column>
-        <Column span={3} className="pt-5">
+        <Column span={3} spanMd={2} spanSm={4} className="pt-5 pb-7">
           <SubscribeForm />
         </Column>
       </Grid>

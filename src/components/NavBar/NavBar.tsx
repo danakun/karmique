@@ -119,19 +119,6 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
                 <span className="nav-link">Collection</span>
               </div>
 
-              {/* Dynamic main navigation links from Prismic */}
-              {/* {settings?.data.navigation_link?.map((link) => {
-                const typedLink = link as PrismicNavigationLink;
-                const href =
-                  typedLink.url ||
-                  (typedLink.type === "homepage" ? "/" : `/${typedLink.type}`);
-
-                return (
-                  <Link key={typedLink.key} href={href} className="nav-link">
-                    {typedLink.text}
-                  </Link>
-                );
-              })} */}
               {settings?.data.navigation_link?.map((link) => (
                 <TransitionLink
                   key={link.key}
@@ -176,10 +163,10 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
           onMouseLeave={hideDropdown}
           onLinkClick={hideDropdown}
         />
-      </header>
 
-      {/* Mobile Menu Component */}
-      <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} />
+        {/* Mobile Menu Component - MOVED INSIDE HEADER */}
+        <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} />
+      </header>
 
       {/* Render blur portal */}
       {blurPortal}

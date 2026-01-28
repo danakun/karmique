@@ -29,18 +29,18 @@ export const OtherProducts = async ({
           </h2>
         </Column>
         {otherProducts.map((product) => (
-          <Column key={product.uid} span={3}>
+          <Column key={product.uid} span={3} spanMd={4} spanSm={4}>
             <TransitionLink document={product} className="group">
               <div className="relative w-full transition-transform duration-500 group-hover:scale-105">
                 <PrismicNextImage
                   field={product.data.bottle_image}
                   width={600}
                   height={600}
-                  className="relative aspect-[3/4] h-auto w-full rounded-lg object-cover"
+                  className="relative aspect-[4/3] h-auto w-full rounded-lg object-cover lg:aspect-[3/4]"
                 />
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 mb-8">
                 <h3 className="h3">
                   <PrismicText field={product.data.title} />
                 </h3>

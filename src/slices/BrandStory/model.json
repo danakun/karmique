@@ -1,0 +1,76 @@
+{
+  "id": "brand_story",
+  "type": "SharedSlice",
+  "name": "BrandStory",
+  "description": "BrandStory",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "eyebrow text"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em,heading3"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading3,heading4,heading5,strong,em"
+          }
+        },
+        "image_side": {
+          "type": "Select",
+          "config": {
+            "label": "Image Side",
+            "placeholder": "",
+            "options": [
+              "Left",
+              "Right"
+            ]
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "",
+            "options": [
+              "White",
+              "Pink",
+              "Grey"
+            ],
+            "default_value": "White"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

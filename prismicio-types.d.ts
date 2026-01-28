@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type BrandDocumentDataSlicesSlice = CallToActionSlice;
+type BrandDocumentDataSlicesSlice = BrandStorySlice | CallToActionSlice;
 
 /**
  * Content for Brand documents
@@ -130,7 +130,7 @@ interface BrandDocumentData {
 export type BrandDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<BrandDocumentData>, "brand", Lang>;
 
-type CollectionDocumentDataSlicesSlice = HeroSlice;
+type CollectionDocumentDataSlicesSlice = TextSectionSlice | HeroSlice;
 
 /**
  * Content for Collection documents
@@ -806,6 +806,102 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *BrandStory → Default → Primary*
+ */
+export interface BrandStorySliceDefaultPrimary {
+  /**
+   * Eyebrow field in *BrandStory → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: eyebrow text
+   * - **API ID Path**: brand_story.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *BrandStory → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: brand_story.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *BrandStory → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: brand_story.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Image Side field in *BrandStory → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: brand_story.default.primary.image_side
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  image_side: prismic.SelectField<"Left" | "Right">;
+
+  /**
+   * Image field in *BrandStory → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: brand_story.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Background Color field in *BrandStory → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: brand_story.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  background_color: prismic.SelectField<"White" | "Pink" | "Grey", "filled">;
+}
+
+/**
+ * Default variation for BrandStory Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BrandStorySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BrandStorySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BrandStory*
+ */
+type BrandStorySliceVariation = BrandStorySliceDefault;
+
+/**
+ * BrandStory Shared Slice
+ *
+ * - **API ID**: `brand_story`
+ * - **Description**: BrandStory
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BrandStorySlice = prismic.SharedSlice<
+  "brand_story",
+  BrandStorySliceVariation
+>;
+
+/**
  * Primary content in *CallToAction → Default → Primary*
  */
 export interface CallToActionSliceDefaultPrimary {
@@ -870,9 +966,85 @@ export type CallToActionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *CallToAction → withVideoBackground → Primary*
+ */
+export interface CallToActionSliceWithVideoBackgroundPrimary {
+  /**
+   * Eyebrow field in *CallToAction → withVideoBackground → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.withVideoBackground.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *CallToAction → withVideoBackground → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.withVideoBackground.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *CallToAction → withVideoBackground → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.withVideoBackground.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Button field in *CallToAction → withVideoBackground → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.withVideoBackground.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Primary" | "Secondary" | "Tertiary" | "Link"
+  >;
+
+  /**
+   * YouTube Video ID field in *CallToAction → withVideoBackground → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.withVideoBackground.primary.youtube_video_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  youtube_video_id: prismic.KeyTextField;
+}
+
+/**
+ * withVideoBackground variation for CallToAction Slice
+ *
+ * - **API ID**: `withVideoBackground`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSliceWithVideoBackground = prismic.SharedSliceVariation<
+  "withVideoBackground",
+  Simplify<CallToActionSliceWithVideoBackgroundPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *CallToAction*
  */
-type CallToActionSliceVariation = CallToActionSliceDefault;
+type CallToActionSliceVariation =
+  | CallToActionSliceDefault
+  | CallToActionSliceWithVideoBackground;
 
 /**
  * CallToAction Shared Slice
@@ -1451,10 +1623,16 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      BrandStorySlice,
+      BrandStorySliceDefaultPrimary,
+      BrandStorySliceVariation,
+      BrandStorySliceDefault,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
+      CallToActionSliceWithVideoBackgroundPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      CallToActionSliceWithVideoBackground,
       FeaturedFragranceSlice,
       FeaturedFragranceSliceDefaultPrimary,
       FeaturedFragranceSliceVariation,

@@ -193,22 +193,9 @@
   } */
 }
 @media (max-width: 600px) {
-  .card {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin: var(--spacing-10) 0;
-  }
-
-  /* Reset all positioning on mobile */
-  .bottomRight,
-  .bottomLeft,
-  .topRight,
-  .topLeft {
-    position: static;
-    bottom: auto;
-    right: auto;
-    top: auto;
-    left: auto;
+  .bottomRight {
+    right: var(--spacing-3);
+    left: var(--spacing-3);
+    bottom: var(--spacing-3);
   }
 }

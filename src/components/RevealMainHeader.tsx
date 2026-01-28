@@ -112,7 +112,7 @@ export const RevealMainHeader = ({
       {wordsWithBreaks.map((item, index) => {
         return (
           <React.Fragment key={`${item.word}-${index}-${id}`}>
-            <span className="mb-0 inline-block overflow-hidden pb-2">
+            <span className="mb-0 inline-block overflow-hidden pb-3">
               <span
                 className={clsx(
                   "reveal-text-word mt-0 inline-block translate-y-[120%] will-change-transform",

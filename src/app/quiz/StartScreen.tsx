@@ -12,7 +12,7 @@ type StartScreenProps = {
 
 export const StartScreen = ({ quizData, onStart }: StartScreenProps) => {
   return (
-    <div className="mx-auto px-12 py-28 text-center md:px-16 lg:px-32 2xl:px-40">
+    <div className="mx-auto px-6 py-28 text-center md:px-16 lg:px-32 2xl:px-40">
       <FadeIn vars={{ delay: 0, duration: 1.2 }} className="translate-y-8">
         <p className="eyebrow mb-4">{quizData.data.eyebrow}</p>
       </FadeIn>

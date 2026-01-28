@@ -23,7 +23,10 @@ const TextSection: FC<TextSectionProps> = ({ slice }) => {
       as="section"
     >
       <Grid>
-        <Column span={12} className="mx-auto max-w-[1050px] pt-40 text-center">
+        <Column
+          span={12}
+          className="mx-auto max-w-[1050px] pt-4 text-center lg:pt-40"
+        >
           <p className="eyebrow mb-6 text-center tracking-wider">
             {slice.primary.eyebrow}
           </p>
@@ -38,7 +41,7 @@ const TextSection: FC<TextSectionProps> = ({ slice }) => {
           >
             {/* <PrismicRichText field={slice.primary.title} /> */}
           </RevealText>
-          <div className="text-large mx-auto mb-40 max-w-2xl text-balance">
+          <div className="text-large mx-auto mb-20 max-w-2xl text-balance lg:mb-40">
             <PrismicRichText field={slice.primary.body} />
           </div>
         </Column>

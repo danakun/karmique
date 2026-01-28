@@ -25,26 +25,15 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const formattedPrice = formatPrice(page?.data.price);
 
   return (
-    //<SliceZone slices={page.data.slices} components={components} />
     <Container>
       <Grid className="pt-6 lg:pt-20">
         <Column
           span={6}
+          spanMd={4}
+          spanSm={4}
           className="relative mb-6 flex justify-center md:mb-14 md:pb-10"
         >
           <div className="relative w-full lg:w-2/3">
-            {" "}
-            {/* This makes it take 50% width (3/6 columns) */}
-            {/* <PrismicNextImage
-              field={page.data.bottle_image}
-              priority
-              className="absolute top-[90%] aspect-[3/4] -scale-y-100 rounded-lg [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_70%,rgba(0,0,0,.30)_100%)] object-cover"
-            />
-            <PrismicNextImage
-              field={page.data.bottle_image}
-              priority
-              className="relative aspect-[3/4] h-auto w-full rounded-lg object-cover"
-            /> */}
             <ProductGallery
               mainImage={page.data.bottle_image}
               additionalImages={[
@@ -55,7 +44,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             />
           </div>
         </Column>
-        <Column span={6}>
+        <Column span={6} spanMd={4} spanSm={4}>
           <div className="relative w-full lg:w-2/3">
             <h1 className="h1 border-b border-black/50 pb-4">
               <PrismicText field={page.data.title} fallback="Fragrance" />

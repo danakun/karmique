@@ -97,7 +97,7 @@ const ScrollText: FC<ScrollTextProps> = ({ slice }) => {
     <Container
       ref={componentRef}
       as="section"
-      variant="full"
+      variant="content"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="section-padding relative flex items-center justify-center bg-white"
@@ -111,7 +111,7 @@ const ScrollText: FC<ScrollTextProps> = ({ slice }) => {
         </div>
 
         <div className="text-center" ref={textRef}>
-          <p className="decorative h2 flex flex-wrap justify-center px-12 leading-tight text-balance">
+          <p className="decorative h2 flex max-w-4xl flex-wrap justify-center px-12 leading-tight text-balance">
             {words.map((word, index) => (
               <span key={`${word}-${index}`} className="inline">
                 {word.split("").map((letter, letterIndex) => (

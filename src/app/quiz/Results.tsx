@@ -108,7 +108,7 @@ export const Results = ({ votes, fragrances, onRetake }: ResultProps) => {
       className="result-container mx-auto translate-y-5 py-12 text-center opacity-0"
       vars={{ duration: 0.8 }}
     >
-      <div className="mb-10">
+      <div className="mb-10 px-6">
         <p className="eyebrow mb-3 tracking-wider">Results</p>
         <h2 className="h2 mb-4">Your Personalized Reccomendation</h2>
         <p className="text-large mx-auto mb-3 max-w-2xl text-balance">

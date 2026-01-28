@@ -63,7 +63,7 @@ export default async function RootLayout({
             {children}
             <Footer />
           </main>
-          <SimpleModal /> {/* Add modal here */}
+          <SimpleModal />
         </body>
         <PrismicPreview repositoryName={repositoryName} />
       </html>
