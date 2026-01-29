@@ -69,7 +69,10 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type BrandDocumentDataSlicesSlice = BrandStorySlice | CallToActionSlice;
+type BrandDocumentDataSlicesSlice =
+  | FullImageSlice
+  | BrandStorySlice
+  | CallToActionSlice;
 
 /**
  * Content for Brand documents

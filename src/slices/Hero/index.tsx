@@ -73,7 +73,7 @@ const Hero: FC<HeroProps> = async ({ slice }) => {
             {/* Description */}
             <FadeIn
               vars={{ delay: 1, duration: 1 }}
-              className="text-large mb-2 max-w-96 text-white motion-safe:translate-y-8 md:mb-8"
+              className="text-large mb-4 max-w-96 text-white motion-safe:translate-y-8 md:mb-8"
             >
               <PrismicRichText field={slice.primary.paragraph} />
             </FadeIn>

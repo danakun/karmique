@@ -128,7 +128,7 @@ export const Question = ({
   return (
     <div className="mx-auto max-w-4xl py-12 text-center">
       {/* Step Counter */}
-      <div className="mx-auto mb-10 flex w-full max-w-md items-center">
+      <div className="mx-auto mb-10 flex w-full max-w-md items-center px-4">
         {Array.from({ length: totalQuestions }).map((_, index) => (
           <Fragment key={index}>
             <div
@@ -162,7 +162,7 @@ export const Question = ({
           <legend className="sr-only">
             {question.question_text || "Select an option"}
           </legend>
-          <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-5 md:gap-6">
+          <div className="grid grid-cols-1 gap-3 px-4 sm:gap-4 md:grid-cols-5 md:gap-6">
             {answers.map((answer, index) => (
               <Answer
                 key={answer.value}
@@ -176,7 +176,7 @@ export const Question = ({
             ))}
           </div>
         </fieldset>
-        <div className="mx-auto flex max-w-md items-center justify-between">
+        <div className="mx-auto flex max-w-md items-center justify-between px-4">
           <button onClick={handleBack} className="btn btn-primary">
             Back
           </button>

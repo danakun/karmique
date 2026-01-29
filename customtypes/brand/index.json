@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "full_image": {
+              "type": "SharedSlice"
+            },
             "brand_story": {
               "type": "SharedSlice"
             },

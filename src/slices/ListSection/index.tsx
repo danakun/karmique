@@ -25,7 +25,7 @@ const TextSection: FC<TextSectionProps> = ({ slice }) => {
       <Grid>
         <Column
           span={12}
-          className="mx-auto max-w-[1050px] pt-4 text-center lg:pt-40"
+          className="mx-auto max-w-[1050px] pt-24 text-center lg:pt-40"
         >
           <p className="eyebrow mb-6 text-center tracking-wider">
             {slice.primary.eyebrow}

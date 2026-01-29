@@ -84,8 +84,8 @@
 @media (max-width: 600px) {
   :root {
     --text-h1: 36px;
-    --text-h2: 24px;
-    --text-h3: 18px;
+    --text-h2: 32px;
+    --text-h3: 24px;
     --grid-margin: 16px;
     --spacing-30: 60px;
   }
