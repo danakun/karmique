@@ -4,7 +4,7 @@
   isolation: isolate;
 }
 
-/* Refined glass glow with inner color glow */
+/* INTENSIFIED dynamic color glow */
 .glowBackground {
   position: absolute;
   inset: 0;
@@ -13,41 +13,27 @@
   pointer-events: none;
   z-index: 0;
 
-  /* Soft inner glow effect */
+  /* Fallback colors */
+  --glow-color-1: rgb(200, 220, 230);
+  --glow-color-2: rgb(180, 200, 220);
+
+  /* More intense radial gradient - higher percentages */
   background: radial-gradient(
     ellipse at center,
-    hsla(200, 40%, 85%, 0.15) 0%,
-    hsla(210, 35%, 88%, 0.12) 30%,
-    hsla(190, 30%, 90%, 0.08) 60%,
+    color-mix(in srgb, var(--glow-color-1) 35%, transparent) 0%,
+    color-mix(in srgb, var(--glow-color-2) 28%, transparent) 30%,
+    color-mix(in srgb, var(--glow-color-1) 20%, transparent) 60%,
+    color-mix(in srgb, var(--glow-color-2) 12%, transparent) 80%,
     transparent 100%
   );
 
-  /* Additional outer shadow layer */
+  /* Stronger outer shadow for depth */
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    0 4px 16px rgba(0, 0, 0, 0.04);
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* Custom properties for smooth color transitions */
-@property --c1 {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: hsl(0, 0%, 90%);
-}
-
-@property --c2 {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: hsl(0, 0%, 75%);
-}
-
-@property --c3 {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: hsl(0, 0%, 85%);
-}
-
-/* Sophisticated liquid glass border */
+/* INTENSIFIED dynamic liquid glass border */
 .liquidGlassBorder {
   position: absolute;
   inset: 0;
@@ -57,19 +43,24 @@
   z-index: 1;
   padding: 2px;
 
-  /* Subtle prismatic gradient */
+  /* Fallback colors */
+  --color-1: rgb(220, 220, 220);
+  --color-2: rgb(190, 190, 190);
+  --color-3: rgb(210, 210, 210);
+
+  /* More intense gradient - higher color percentages */
   background: linear-gradient(
     135deg,
-    var(--c1) 0%,
-    var(--c3) 25%,
-    var(--c2) 50%,
-    var(--c3) 75%,
-    var(--c1) 100%
+    color-mix(in srgb, var(--color-1) 60%, white) 0%,
+    color-mix(in srgb, var(--color-3) 55%, white) 25%,
+    color-mix(in srgb, var(--color-2) 65%, white) 50%,
+    color-mix(in srgb, var(--color-3) 55%, white) 75%,
+    color-mix(in srgb, var(--color-1) 60%, white) 100%
   );
 
-  /* Apple's liquid glass effect */
-  backdrop-filter: blur(20px) saturate(130%) brightness(1.1);
-  -webkit-backdrop-filter: blur(20px) saturate(130%) brightness(1.1);
+  /* Stronger saturation for more vivid colors */
+  backdrop-filter: blur(20px) saturate(180%) brightness(1.12);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.12);
 
   /* Create hollow border effect */
   -webkit-mask:
@@ -78,54 +69,47 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 
-  /* Refined glass reflections with inner glow */
+  /* More intense color reflections */
   box-shadow: 
-    /* Inner highlights and glow */
-    inset 0 1px 1px hsla(0, 0%, 100%, 0.6),
-    inset 0 -1px 1px hsla(0, 0%, 100%, 0.2),
-    inset 0 0 20px hsla(200, 30%, 85%, 0.2),
-    inset 0 0 40px hsla(210, 25%, 88%, 0.15),
-    /* Outer shadow for depth */ 0 4px 20px rgba(0, 0, 0, 0.06),
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    /* Subtle outer glow */ 0 0 20px hsla(200, 20%, 90%, 0.1),
-    /* Edge highlight */ 0 1px 0 hsla(0, 0%, 100%, 0.5);
+    /* Inner highlights with stronger color tint */
+    inset 0 1px 1px hsla(0, 0%, 100%, 0.7),
+    inset 0 -1px 1px hsla(0, 0%, 100%, 0.3),
+    inset 0 0 25px color-mix(in srgb, var(--color-1) 35%, transparent),
+    inset 0 0 45px color-mix(in srgb, var(--color-2) 28%, transparent),
+    /* Outer shadow for depth */ 0 4px 20px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    /* More visible outer glow with color */ 0 0 25px
+      color-mix(in srgb, var(--color-1) 20%, transparent),
+    0 0 40px color-mix(in srgb, var(--color-2) 15%, transparent),
+    /* Edge highlight */ 0 1px 0 hsla(0, 0%, 100%, 0.6);
 
-  /* Smooth color transitions */
+  /* Smooth transitions */
   transition:
-    --c1 400ms ease,
-    --c2 400ms ease,
-    --c3 400ms ease;
+    opacity 400ms ease,
+    box-shadow 400ms ease;
 }
 
-/* Hover state - enhanced glow and shadow */
+/* INTENSIFIED hover state */
 .cardWrapper:hover .liquidGlassBorder {
-  --c1: hsl(200, 30%, 88%);
-  --c2: hsl(210, 25%, 85%);
-  --c3: hsl(190, 20%, 90%);
-
   box-shadow: 
-    /* Stronger inner glow */
-    inset 0 1px 2px hsla(0, 0%, 100%, 0.8),
-    inset 0 -1px 2px hsla(0, 0%, 100%, 0.3),
-    inset 0 0 30px hsla(200, 35%, 82%, 0.3),
-    inset 0 0 50px hsla(210, 30%, 85%, 0.2),
-    /* Enhanced outer shadow */ 0 12px 40px rgba(0, 0, 0, 0.12),
-    0 6px 20px rgba(0, 0, 0, 0.08),
-    /* Stronger outer glow */ 0 0 30px hsla(200, 25%, 88%, 0.15),
-    0 0 50px hsla(210, 20%, 90%, 0.1),
-    0 1px 0 hsla(0, 0%, 100%, 0.7);
+    /* Much stronger inner glow with color */
+    inset 0 1px 2px hsla(0, 0%, 100%, 0.9),
+    inset 0 -1px 2px hsla(0, 0%, 100%, 0.4),
+    inset 0 0 40px color-mix(in srgb, var(--color-1) 50%, transparent),
+    inset 0 0 60px color-mix(in srgb, var(--color-2) 40%, transparent),
+    inset 0 0 80px color-mix(in srgb, var(--color-3) 30%, transparent),
+    /* Enhanced outer shadow */ 0 12px 40px rgba(0, 0, 0, 0.15),
+    0 6px 20px rgba(0, 0, 0, 0.1),
+    /* Much stronger outer glow with color */ 0 0 35px
+      color-mix(in srgb, var(--color-1) 30%, transparent),
+    0 0 55px color-mix(in srgb, var(--color-2) 25%, transparent),
+    0 0 75px color-mix(in srgb, var(--color-3) 18%, transparent),
+    0 1px 0 hsla(0, 0%, 100%, 0.8);
 }
 
 /* Enhanced hover on background glow */
 .cardWrapper:hover .glowBackground {
   box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.15),
-    0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Active state - slightly darker */
-.cardWrapper:active .liquidGlassBorder {
-  --c1: hsl(200, 25%, 80%);
-  --c2: hsl(210, 20%, 75%);
-  --c3: hsl(190, 18%, 82%);
+    0 12px 40px rgba(0, 0, 0, 0.18),
+    0 6px 20px rgba(0, 0, 0, 0.1);
 }
