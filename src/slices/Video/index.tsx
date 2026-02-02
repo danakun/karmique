@@ -16,7 +16,7 @@ const Video: FC<VideoProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative mx-0 mb-20 w-full"
+      className="relative mx-0 w-full"
     >
       <h2 className="sr-only">Karmique Video</h2>
       <Lazy

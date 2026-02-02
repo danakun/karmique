@@ -5,12 +5,12 @@ import { TransitionLink } from "./TransitionLink";
 
 export default function Footer() {
   return (
-    <footer className="bg-white pt-16 pb-6 lg:pt-44 xl:pt-40">
+    <footer className="mx-auto max-w-[1400] bg-white pt-6 pb-6 xl:pt-40">
       <div className="px-5">
         <div className="divider border-b border-black/50"></div>
       </div>
       <Grid className="px-5">
-        <Column span={3} spanMd={2} spanSm={2} className="pt-5 pb-7">
+        <Column span={2} spanMd={2} spanSm={2} className="pt-5 pb-7">
           {/* About Section */}
           <div className="flex flex-col space-y-6">
             <h3 className="h4">About</h3>
@@ -36,7 +36,7 @@ export default function Footer() {
             </nav>
           </div>
         </Column>
-        <Column span={3} spanMd={2} spanSm={2} className="pt-5 pb-7">
+        <Column span={2} spanMd={2} spanSm={2} className="pt-5 pb-7">
           {/* Shop Section */}
           <div className="flex flex-col space-y-6">
             <h3 className="h4">Shop</h3>
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
         </Column>
 
-        <Column span={3} spanMd={2} spanSm={2} className="pt-5 pb-7">
+        <Column span={4} spanMd={2} spanSm={2} className="pt-5 pb-7">
           {/* Social Section */}
           <div className="flex flex-col space-y-6">
             <h3 className="h4">Social</h3>
@@ -113,7 +113,7 @@ export default function Footer() {
             </nav>
           </div>
         </Column>
-        <Column span={3} spanMd={2} spanSm={4} className="pt-5 pb-7">
+        <Column span={4} spanMd={2} spanSm={4} className="pt-5 pb-7">
           <SubscribeForm />
         </Column>
       </Grid>
