@@ -6,6 +6,8 @@ import Image from "next/image";
 import { GSAPModal } from "@/components/GSAPModal";
 import styles from "./SimpleModal.module.css";
 
+const MODAL_SHOWN_KEY = "karmique_welcome_modal_shown";
+
 export default function SimpleModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
@@ -14,11 +16,24 @@ export default function SimpleModal() {
   const isHomepage = pathname === "/";
 
   const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Mark modal as shown in localStorage
+    localStorage.setItem(MODAL_SHOWN_KEY, "true");
+  };
 
   useEffect(() => {
     if (!isHomepage) return;
 
+    // Check if modal was already shown
+    const hasBeenShown = localStorage.getItem(MODAL_SHOWN_KEY);
+
+    if (hasBeenShown) {
+      // Modal was already shown, don't show again
+      return;
+    }
+
+    // Show modal after 4 seconds if it hasn't been shown before
     const timer = setTimeout(() => {
       openModal();
     }, 4000);
@@ -34,16 +49,6 @@ export default function SimpleModal() {
 
   return (
     <>
-      {/* Trigger button - only show on homepage */}
-      {/* {isHomepage && (
-        <button
-          onClick={openModal}
-          className={`btn bg-white/10 ${styles.triggerButton}`}
-        >
-          Newsletter
-        </button>
-      )} */}
-
       {/* Modal with GSAP animations */}
       <GSAPModal
         isOpen={isHomepage && isModalOpen}

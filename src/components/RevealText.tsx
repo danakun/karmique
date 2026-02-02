@@ -44,6 +44,7 @@ export const RevealText = ({
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.to(".reveal-text-word", {
           y: 0,
+          opacity: 1,
           stagger: staggerAmount,
           duration,
           ease: "power3.out",
@@ -84,7 +85,7 @@ export const RevealText = ({
           key={`${word}-${index}-${id}`}
           className="mb-0 inline-block overflow-hidden pb-4"
         >
-          <span className="reveal-text-word mt-0 inline-block translate-y-[120%] will-change-transform">
+          <span className="reveal-text-word mt-0 inline-block translate-y-[140%] opacity-0 will-change-transform">
             {word}
             {index < words.length - 1 ? <>&nbsp;</> : null}
           </span>

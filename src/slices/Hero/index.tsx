@@ -59,7 +59,7 @@ const Hero: FC<HeroProps> = async ({ slice }) => {
         <Grid>
           <Column span={12}>
             {/* Main heading */}
-            <div className="max-w-8xl relative flex flex-col justify-center">
+            <div className="max-w-8xl relative flex flex-col justify-center pt-4">
               <RevealMainHeader
                 field={slice.primary.heading}
                 id="hero-heading"

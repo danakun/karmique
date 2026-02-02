@@ -164,18 +164,25 @@ body {
   padding-bottom: var(--spacing-40);
 }
 
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: var(--spacing-10) 0 var(--spacing-24);
+}
+
 /* === TYPOGRAPHY === */
 .h1 {
   font-size: var(--text-h1);
   font-weight: var(--font-weight-regular);
   letter-spacing: -2px;
+  line-height: 1.1;
 }
 
 .h2 {
   font-family: var(--font-primary);
   font-size: var(--text-h2);
   font-weight: var(--font-weight-medium);
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -1px;
 }
 

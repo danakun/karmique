@@ -78,6 +78,7 @@ export const RevealMainHeader = ({
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.to(".reveal-text-word", {
           y: 0,
+          opacity: 1,
           duration,
           ease: "power3.out",
           stagger: staggerAmount,
@@ -88,6 +89,7 @@ export const RevealMainHeader = ({
       mm.add("(prefers-reduced-motion: reduce)", () => {
         gsap.set(".reveal-text-word", {
           y: 0,
+          opacity: 1,
         });
       });
 
@@ -115,7 +117,7 @@ export const RevealMainHeader = ({
             <span className="inline-block overflow-hidden pb-2">
               <span
                 className={clsx(
-                  "reveal-text-word inline-block translate-y-full will-change-transform",
+                  "reveal-text-word inline-block translate-y-full opacity-0 will-change-transform",
                   item.fontClass,
                 )}
               >
