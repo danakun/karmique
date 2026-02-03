@@ -5,7 +5,7 @@ import { TransitionLink } from "./TransitionLink";
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-[1400] bg-white pt-6 pb-6 xl:pt-40">
+    <footer className="mx-auto max-w-[1400] bg-white pt-6 pb-6">
       <div className="px-5">
         <div className="divider border-b border-black/50"></div>
       </div>

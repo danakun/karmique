@@ -564,6 +564,7 @@ body {
   color: var(--color-black);
   line-height: 1.4;
   margin: 0;
+  padding-bottom: var(--spacing-2);
 }
 
 .product-card .product-buttons {

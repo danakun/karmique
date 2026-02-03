@@ -249,6 +249,17 @@ interface FragranceDocumentData {
   description: prismic.RichTextField;
 
   /**
+   * Accords field in *Fragrance *
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fragrance.accords
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  accords: prismic.RichTextField;
+
+  /**
    * Price field in *Fragrance *
    *
    * - **Field Type**: Number

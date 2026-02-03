@@ -7,6 +7,7 @@ import { useScrollDirection } from "./hooks/useScrollDirection";
 import { useNavbarTransparency } from "./hooks/useNavbarTransparency";
 import { MobileMenu } from "./MobileMenu";
 import { CollectionsDropdown } from "./CollectionsDropdown";
+import { SearchBar } from "./SearchBar"; // NEW IMPORT
 import { Content } from "@prismicio/client";
 import { createNavigationConfig } from "./navigationConfig";
 import { useDropdownBlur } from "./hooks/useDropdownBlur";
@@ -19,6 +20,7 @@ type NavBarProps = {
 export const NavBar = ({ settings }: NavBarProps = {}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false); // NEW STATE
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Create static navigation config
@@ -50,6 +52,18 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
     setMobileMenuOpen(false);
   };
 
+  // NEW: Toggle search
+  const toggleSearch = () => {
+    setSearchOpen(!searchOpen);
+    if (!searchOpen) {
+      setActiveDropdown(null); // Close any dropdown when opening search
+    }
+  };
+
+  const closeSearch = () => {
+    setSearchOpen(false);
+  };
+
   // Desktop dropdown functions
   const showDropdown = (dropdownId: string) => {
     if (hoverTimeoutRef.current) {
@@ -58,6 +72,7 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
     }
     setActiveDropdown(dropdownId);
     setInteracting(true);
+    setSearchOpen(false); // Close search when opening dropdown
   };
 
   const hideDropdown = () => {
@@ -77,8 +92,11 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
   };
 
   const blurPortal = useDropdownBlur({
-    isActive: !!activeDropdown,
-    onClose: hideDropdown,
+    isActive: !!activeDropdown || searchOpen, // UPDATED
+    onClose: () => {
+      hideDropdown();
+      closeSearch();
+    },
   });
 
   return (
@@ -143,7 +161,7 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
             </TransitionLink>
           </div>
 
-          {/* Right Section - Account/Cart Links */}
+          {/* Right Section - Account/Cart/Search */}
           <div className="navbar-links-desktop">
             {navigationConfig.mainLinks
               .filter((link) => ["Account", "Bag (0)"].includes(link.label))
@@ -152,7 +170,13 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
                   {link.label}
                 </Link>
               ))}
-            <button className="nav-link">Search</button>
+            <button
+              className="nav-link"
+              onClick={toggleSearch}
+              aria-label="Toggle search"
+            >
+              {searchOpen ? "Close" : "Search"}
+            </button>
           </div>
         </nav>
 
@@ -164,7 +188,10 @@ export const NavBar = ({ settings }: NavBarProps = {}) => {
           onLinkClick={hideDropdown}
         />
 
-        {/* Mobile Menu Component - MOVED INSIDE HEADER */}
+        {/* Search Bar - NEW */}
+        <SearchBar isOpen={searchOpen} onClose={closeSearch} />
+
+        {/* Mobile Menu Component */}
         <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} />
       </header>
 

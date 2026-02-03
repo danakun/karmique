@@ -46,6 +46,15 @@
           "multi": "paragraph,em,strong"
         }
       },
+      "accords": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Accords",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "single": "heading5,heading6,strong,em,paragraph"
+        }
+      },
       "price": {
         "type": "Number",
         "config": {

@@ -1,0 +1,47 @@
+.searchBar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-stroke-grey);
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.searchBarContent {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 2rem var(--grid-margin);
+}
+
+.searchForm {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.searchInput {
+  flex: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .searchBarContent {
+    padding: 1.5rem var(--grid-margin);
+  }
+
+  .searchForm {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .searchInput,
+  .searchForm button {
+    width: 100%;
+  }
+}
