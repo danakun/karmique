@@ -20,7 +20,7 @@ export const StartScreen = ({ quizData, onStart }: StartScreenProps) => {
         align="center"
         id="quiz-title"
         field={quizData.data.title}
-        className="h1 py-8 leading-[0.9]"
+        className="h1 py-4 leading-[0.9]"
       />
       <FadeIn
         vars={{ delay: 0.5, duration: 2 }}

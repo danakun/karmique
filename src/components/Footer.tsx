@@ -5,7 +5,7 @@ import { TransitionLink } from "./TransitionLink";
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-[1400] bg-white pt-16 pb-6">
+    <footer className="mx-auto max-w-[1400] bg-white pt-16 pb-6 lg:pt-32">
       <Grid className="px-5">
         <Column span={2} spanMd={2} spanSm={2} className="pt-5 pb-7">
           {/* About Section */}

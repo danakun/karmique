@@ -83,7 +83,7 @@ export const RevealText = ({
       {words.map((word, index) => (
         <span
           key={`${word}-${index}-${id}`}
-          className="mb-0 inline-block overflow-hidden pb-4"
+          className="mb-0 inline-block overflow-hidden pb-1"
         >
           <span className="reveal-text-word mt-0 inline-block translate-y-[140%] opacity-0 will-change-transform">
             {word}
