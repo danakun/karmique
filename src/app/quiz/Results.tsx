@@ -110,7 +110,7 @@ export const Results = ({ votes, fragrances, onRetake }: ResultProps) => {
     >
       <div className="mb-10 px-6">
         <p className="eyebrow mb-3 tracking-wider">Results</p>
-        <h2 className="h2 mb-4">Your Personalized Reccomendation</h2>
+        <h2 className="h2 mb-4">Your Personalized Recommendation</h2>
         <p className="text-large mx-auto mb-3 max-w-2xl text-balance">
           A unique selection of fragrances that are most suited to your personal
           taste.
